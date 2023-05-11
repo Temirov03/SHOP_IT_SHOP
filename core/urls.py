@@ -24,10 +24,12 @@ from django.contrib import admin
 from django.urls import path,include
 from core.router import DefaultRouter
 from product.urls import router as product_router
+from provider.urls import router as provider_router
 
 router = DefaultRouter()
 
 router.extend(product_router)
+router.extend(provider_router)
 
 schema_view = get_schema_view(
    openapi.Info(
