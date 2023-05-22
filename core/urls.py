@@ -25,11 +25,18 @@ from django.urls import path,include
 from core.router import DefaultRouter
 from product.urls import router as product_router
 from provider.urls import router as provider_router
+from warehouse.urls import router as warehouse_router
+from user.urls import router as user_router
+
 
 router = DefaultRouter()
 
 router.extend(product_router)
 router.extend(provider_router)
+router.extend(warehouse_router)
+router.extend(user_router)
+
+
 
 schema_view = get_schema_view(
    openapi.Info(
